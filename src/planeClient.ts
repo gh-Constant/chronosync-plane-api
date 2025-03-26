@@ -23,6 +23,60 @@ interface IssueCreatePayload {
 }
 
 /**
+ * Interface representing a project member
+ * @interface ProjectMember
+ */
+interface ProjectMember {
+  id: string;
+  user: {
+    id: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+  };
+  role: 'admin' | 'member' | 'viewer';
+}
+
+/**
+ * Interface representing a project
+ * @interface Project
+ */
+interface Project {
+  id: string;
+  name: string;
+  identifier: string;
+  description?: string;
+  network: number;
+  workspace: {
+    id: string;
+    slug: string;
+    name: string;
+  };
+}
+
+/**
+ * Interface representing an issue state
+ * @interface IssueState
+ */
+interface IssueState {
+  id: string;
+  name: string;
+  color: string;
+  group: 'backlog' | 'unstarted' | 'started' | 'completed' | 'cancelled';
+}
+
+/**
+ * Interface representing a label
+ * @interface Label
+ */
+interface Label {
+  id: string;
+  name: string;
+  color: string;
+  description?: string;
+}
+
+/**
  * Client for interacting with the Plane project management API
  * @class PlaneClient
  */
@@ -145,6 +199,192 @@ export class PlaneClient {
           data: error.response?.data
         });
       }
+      throw error;
+    }
+  }
+
+  /**
+   * Get all members of the current project
+   * @returns {Promise<ProjectMember[]>} Array of project members
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async getProjectMembers(): Promise<ProjectMember[]> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.get(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/members/`
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch project members:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get all projects in the workspace
+   * @returns {Promise<Project[]>} Array of projects
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async getProjects(): Promise<Project[]> {
+    try {
+      const response = await this.client.get(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/`
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch projects:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get all states defined for the current project
+   * @returns {Promise<IssueState[]>} Array of issue states
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async getIssueStates(): Promise<IssueState[]> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.get(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/states/`
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch issue states:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get all labels defined for the current project
+   * @returns {Promise<Label[]>} Array of labels
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async getLabels(): Promise<Label[]> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.get(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/labels/`
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch labels:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get all issues in the current project
+   * @param {Object} params - Query parameters
+   * @param {number} params.page - Page number for pagination
+   * @param {number} params.perPage - Number of items per page
+   * @returns {Promise<any>} Paginated list of issues
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async getIssues(params: { page?: number; perPage?: number } = {}): Promise<any> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.get(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/`,
+        {
+          params: {
+            page: params.page || 1,
+            per_page: params.perPage || 100
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to fetch issues:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Update an existing issue
+   * @param {string} issueId - ID of the issue to update
+   * @param {Partial<IssueCreatePayload>} payload - Updated issue details
+   * @returns {Promise<any>} Updated issue data
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async updateIssue(issueId: string, payload: Partial<IssueCreatePayload>): Promise<any> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.patch(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/`,
+        payload
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to update issue:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Delete an issue
+   * @param {string} issueId - ID of the issue to delete
+   * @returns {Promise<void>}
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async deleteIssue(issueId: string): Promise<void> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      await this.client.delete(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/`
+      );
+    } catch (error) {
+      console.error('Failed to delete issue:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Add a comment to an issue
+   * @param {string} issueId - ID of the issue
+   * @param {string} comment - Comment text
+   * @returns {Promise<any>} Created comment data
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async addIssueComment(issueId: string, comment: string): Promise<any> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      const response = await this.client.post(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/comments/`,
+        { text: comment }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Failed to add comment:', error);
       throw error;
     }
   }
