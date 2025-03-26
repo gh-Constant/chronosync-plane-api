@@ -1,0 +1,19 @@
+{
+  "name": "chronosync-plane-api",
+  "version": "1.0.0",
+  "description": "Plane API client for creating tasks",
+  "main": "dist/createTask.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/createTask.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.24",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.3.3"
+  }
+}
