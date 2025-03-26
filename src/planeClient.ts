@@ -7,7 +7,7 @@ dotenv.config();
  * Interface representing the payload for creating an issue
  * @interface IssueCreatePayload
  */
-interface IssueCreatePayload {
+export interface IssueCreatePayload {
   /** The title/name of the issue */
   name: string;
   /** Optional description of the issue */
@@ -20,6 +20,8 @@ interface IssueCreatePayload {
   assignees?: string[];
   /** Optional array of label IDs */
   labels?: string[];
+  /** Optional parent issue ID */
+  parent?: string;
 }
 
 /**
@@ -71,6 +73,16 @@ interface IssueState {
  */
 interface Label {
   id: string;
+  name: string;
+  color: string;
+  description?: string;
+}
+
+/**
+ * Interface for creating a label
+ * @interface LabelCreatePayload
+ */
+interface LabelCreatePayload {
   name: string;
   color: string;
   description?: string;
@@ -265,7 +277,7 @@ export class PlaneClient {
   }
 
   /**
-   * Get all labels defined for the current project
+   * Get all labels for the current project
    * @returns {Promise<Label[]>} Array of labels
    * @throws {Error} When client is not initialized
    * @throws {AxiosError} When network or API errors occur
@@ -287,11 +299,61 @@ export class PlaneClient {
   }
 
   /**
-   * Get all issues in the current project
-   * @param {Object} params - Query parameters
-   * @param {number} params.page - Page number for pagination
-   * @param {number} params.perPage - Number of items per page
-   * @returns {Promise<any>} Paginated list of issues
+   * Creates a new label in the project
+   * @param {LabelCreatePayload} payload - The label details
+   * @returns {Promise<Label>} The created label
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async createLabel(payload: LabelCreatePayload): Promise<Label> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    try {
+      console.log('Creating label with payload:', payload);
+      const response = await this.client.post(
+        `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/labels/`,
+        payload
+      );
+      console.log('Label created successfully:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Failed to create label:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Check if a state with the given name exists, creating it if necessary
+   * @param {string} stateName - The name of the state to check/create
+   * @param {string} group - The group the state belongs to
+   * @returns {Promise<string>} The ID of the existing or created state
+   * @throws {Error} When client is not initialized
+   * @throws {AxiosError} When network or API errors occur
+   */
+  async ensureStateExists(stateName: string, group: 'backlog' | 'unstarted' | 'started' | 'completed' | 'cancelled'): Promise<string> {
+    if (!this.projectId) {
+      throw new Error('Client not initialized. Call initialize() first');
+    }
+
+    const states = await this.getIssueStates();
+    const existingState = states.find(s => s.name.toLowerCase() === stateName.toLowerCase());
+    
+    if (existingState) {
+      return existingState.id;
+    }
+    
+    // For now, return an empty string if state doesn't exist
+    // State creation requires more complex API calls that might be beyond the scope
+    console.warn(`State "${stateName}" not found. State creation via API is not implemented.`);
+    return '';
+  }
+
+  /**
+   * Get all issues for the current project
+   * @param {Object} params - Pagination parameters
+   * @returns {Promise<any>} The issues data
    * @throws {Error} When client is not initialized
    * @throws {AxiosError} When network or API errors occur
    */
@@ -300,13 +362,15 @@ export class PlaneClient {
       throw new Error('Client not initialized. Call initialize() first');
     }
 
+    const { page = 1, perPage = 20 } = params;
+
     try {
       const response = await this.client.get(
         `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/`,
         {
           params: {
-            page: params.page || 1,
-            per_page: params.perPage || 100
+            page,
+            per_page: perPage
           }
         }
       );
@@ -318,10 +382,10 @@ export class PlaneClient {
   }
 
   /**
-   * Update an existing issue
-   * @param {string} issueId - ID of the issue to update
-   * @param {Partial<IssueCreatePayload>} payload - Updated issue details
-   * @returns {Promise<any>} Updated issue data
+   * Updates an existing issue in the project
+   * @param {string} issueId - The ID of the issue to update
+   * @param {Partial<IssueCreatePayload>} payload - The updated issue details
+   * @returns {Promise<any>} The updated issue data
    * @throws {Error} When client is not initialized
    * @throws {AxiosError} When network or API errors occur
    */
@@ -331,20 +395,22 @@ export class PlaneClient {
     }
 
     try {
+      console.log(`Updating issue ${issueId} with payload:`, payload);
       const response = await this.client.patch(
         `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/`,
         payload
       );
+      console.log('Issue updated successfully:', response.data);
       return response.data;
     } catch (error) {
-      console.error('Failed to update issue:', error);
+      console.error(`Failed to update issue ${issueId}:`, error);
       throw error;
     }
   }
 
   /**
-   * Delete an issue
-   * @param {string} issueId - ID of the issue to delete
+   * Deletes an issue from the project
+   * @param {string} issueId - The ID of the issue to delete
    * @returns {Promise<void>}
    * @throws {Error} When client is not initialized
    * @throws {AxiosError} When network or API errors occur
@@ -355,20 +421,22 @@ export class PlaneClient {
     }
 
     try {
+      console.log(`Deleting issue ${issueId}`);
       await this.client.delete(
         `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/`
       );
+      console.log(`Issue ${issueId} deleted successfully`);
     } catch (error) {
-      console.error('Failed to delete issue:', error);
+      console.error(`Failed to delete issue ${issueId}:`, error);
       throw error;
     }
   }
 
   /**
-   * Add a comment to an issue
-   * @param {string} issueId - ID of the issue
-   * @param {string} comment - Comment text
-   * @returns {Promise<any>} Created comment data
+   * Adds a comment to an issue
+   * @param {string} issueId - The ID of the issue to comment on
+   * @param {string} comment - The comment text
+   * @returns {Promise<any>} The created comment data
    * @throws {Error} When client is not initialized
    * @throws {AxiosError} When network or API errors occur
    */
@@ -378,13 +446,15 @@ export class PlaneClient {
     }
 
     try {
+      console.log(`Adding comment to issue ${issueId}`);
       const response = await this.client.post(
         `/api/v1/workspaces/${this.workspaceSlug}/projects/${this.projectId}/issues/${issueId}/comments/`,
-        { text: comment }
+        { comment_html: comment }
       );
+      console.log('Comment added successfully:', response.data);
       return response.data;
     } catch (error) {
-      console.error('Failed to add comment:', error);
+      console.error(`Failed to add comment to issue ${issueId}:`, error);
       throw error;
     }
   }

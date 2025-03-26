@@ -5,7 +5,8 @@
   "main": "dist/createTask.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/createTask.js"
+    "start": "npm run build && node dist/createTask.js",
+    "delete": "npm run build && node dist/deleteTasks.js"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,114 @@
+test
+Task ID; Task Name;Status;Due Date Text;Start Date Text;Parent ID;Assignees;Priority;Time Estimated Text
+86c2qfwyr;Valider les documents avec un juriste;taches à completer;;;86c2qfwg9;[Constant Suchet];3;30 m
+86c2qfua9;Compléter la homepage du site web;taches en planning;3/29/2025, 4:00:00 AM GMT+1;;null;[Constant Suchet];2;
+86c2qfutm;Ajouter une section de connexion rapide;taches à completer;;;86c2qfua9;[Constant Suchet];3;45 m
+86c2qfugq;Télécharger et installer LLVM pour ARM;taches à completer;;;86c2qfuaa;[Constant Suchet];2;1 h 30 m
+86c2qfwyw;Tester le processus de connexion;taches à completer;;;86c2qfwge;[Constant Suchet];2;15 m
+86c2qwhv6;Création d'un tutorial d'utilisation;taches à completer;;;null;[Constant Suchet];3;10 h
+86c2qr3y9;Tester la réactivité sur desktop et mobile;taches à completer;;;86c2qqxkd;[];null;10 m
+86c2qxzd6;Rajouter des themes de dashboard;taches à completer;;;null;[Constant Suchet];null;
+86c2qk3w1;Ajout de l'authentification avec code mobile;taches à completer;;;86c2qk38c;[];null;2 h 30 m
+86c2qrb04;Optimiser les animations et transitions pour une meilleure UX;taches à completer;;;86c2qqxkd;[];null;2 h
+86c2qr9wk;Calculer les tendances et variations;taches à completer;;;86c2qqxkd;[];null;2 h
+86c2qfuaa;Installer les packages de compilation LLVM arm sur la VM;taches en planning;3/25/2025, 4:00:00 AM GMT+1;3/25/2025, 12:00:00 AM GMT+1;null;[Constant Suchet];3;
+86c2qranc;Implémenter les graphiques en barres et courbes;taches à completer;;;86c2qqxkd;[];null;2 h 30 m
+86c2qfwyq;Rédiger la politique de confidentialité;taches à completer;;;86c2qfwg9;[Constant Suchet];2;1 h
+86c2qx3f7;Accepter seulement certaines applications ou inverse en enlevé;taches à completer;;;86c2qx352;[];null;
+86c2qx0f4;Rajout d'un chronométre pour calculer le temps passé sur des activités plutot que des applications directement;taches à completer;;;null;[Constant Suchet];null;
+86c2qr9qd;Créer des requêtes pour agréger les données (jour/semaine/mois/année);taches à completer;;;86c2qqxkd;[];null;10 m
+86c2qx64v;Activer un mode urgence qui bloque tout les applications de distractions;taches à completer;;;null;[Constant Suchet];null;
+86c2qxa29;Rajouter des icones humanisées enervé etc pour les alertes;taches à completer;;;null;[Constant Suchet];null;
+86c2qk3qa;Ajout de l'authentification automatique avec popup google;taches à completer;;;86c2qk38c;[];null;1 h
+86c2qx0xy;Création de badges, récompenses, gamification;taches à completer;;;null;[Constant Suchet];null;
+86c2qwy7c;Pouvoir rajouter des tags aux applications;taches à completer;;;null;[Constant Suchet];null;
+86c2qwxqd;Envoie d'un mail d'utilisations mensuelles / hebdomadaire à l'utilisateur;taches à completer;;;null;[Constant Suchet];null;
+86c2qravn;Ajouter les filtres interactifs (sélection d’application, période);taches à completer;;;86c2qqxkd;[];null;50 m
+86c2qqxkd;Création du Dashboard;taches en planning;4/21/2025, 4:00:00 AM GMT+2;;null;[Constant Suchet];1;
+86c2qr3y8;Valider l’exactitude des données affichées;taches à completer;;;86c2qqxkd;[];null;15 m
+86c2qwzcy;Bloquage de certains types d'applications ou apps;taches à completer;;;86c2qwwc6;[Constant Suchet];null;
+86c2qk447;Ajout de passcode avec passkey (apple touch etc);taches à completer;;;86c2qk38c;[];null;1 h 30 m
+86c2qfwg9;Créer les premiers dossiers légaux;taches en planning;3/29/2025, 4:00:00 AM GMT+1;;null;[Constant Suchet];3;4 h
+86c2qfutn;Vérifier la responsivité;taches à completer;;;86c2qfua9;[Constant Suchet];3;1 h
+86c2qr3y3;Optimiser les requêtes API pour réduire la latence;taches à completer;;;86c2qqxkd;[];null;30 m
+86c2qx5gf;Création de profils pour voir le nombre de temps que certains personnes dépensent dans leurs catégories;taches à completer;;;null;[Constant Suchet];null;
+86c2qfwyp;Préparer les mentions légales;taches à completer;;;86c2qfwg9;[Constant Suchet];3;30 m
+86c2qfwyx;Implémenter l’authentification via le backend;taches à completer;;;86c2qfwge;[Constant Suchet];2;1 h
+86c2qfutj;Optimiser le temps de chargement;taches à completer;;;86c2qfua9;[Constant Suchet];2;30 m
+86c2qwmmf;Intégrer la création de types d'applications;taches à completer;;;null;[Constant Suchet];2;7 h
+86c2qr6hd;Affichage des données;taches à completer;3/31/2025, 4:00:00 AM GMT+2;;86c2qqxkd;[];null;
+86c2qx352;Systéme de confidentialité performant;taches à completer;;;null;[Constant Suchet];null;
+86c2qk3df;Création de la vérification par mail;taches à completer;;;86c2qk38c;[];null;2 h
+86c2qx2ge;Création d'un classement du temps passé sur des applications productives entre amis;taches à completer;;;null;[Constant Suchet];null;
+86c2qfwz1;Créer l’interface de connexion;taches à completer;;;86c2qfwge;[Constant Suchet];3;45 m
+86c2qx1gc;Proposez des suggestions avec l'IA sur les applications utilisées;taches à completer;;;null;[Constant Suchet];null;
+86c2qrat0;Créer une vue détaillée par application;taches à completer;;;86c2qqxkd;[];null;40 m
+86c2qx8yz;Mode prédictif, anticiper qu'une personne va être non productive et lui rappeler;taches à completer;;;null;[Constant Suchet];null;
+86c2qfwyu;Rédiger les conditions générales d’utilisation;taches à completer;;;86c2qfwg9;[Constant Suchet];2;1 h
+86c2qx7b2;Dans le prenium, proposez des tags automatiquement;taches à completer;;;86c2qwy7c;[Constant Suchet];null;
+86c2qr9mz;Créer l’API pour récupérer les statistiques d’utilisation;taches à completer;;;86c2qqxkd;[];null;15 m
+86c2qr64f;Récupération des données;taches à completer;3/29/2025, 4:00:00 AM GMT+1;;86c2qqxkd;[];null;
+86c2qr6t3;Tests et optimisations;taches à completer;3/31/2025, 4:00:00 AM GMT+2;;86c2qqxkd;[];null;
+86c2qfwyy;Ajouter la gestion des erreurs et affichage des messages;taches à completer;;;86c2qfwge;[Constant Suchet];3;30 m
+86c2qx69v;Implémentation du bloquer de youtube intelligent;taches à completer;;;null;[Constant Suchet];1;
+86c2qfwyn;Vérifier la conformité RGPD;taches à completer;;;86c2qfwg9;[Constant Suchet];2;1 h
+86c2qracn;Gérer la mise en cache pour optimiser les requêtes;taches à completer;;;86c2qqxkd;[];null;1 h
+86c2qr3yb;Gérer les cas où les données sont insuffisantes;taches à completer;;;86c2qqxkd;[];null;30 m
+86c2qrag8;Mettre en place la pagination et le lazy loading;taches à completer;;;86c2qqxkd;[];null;1 h
+86c2qwwc6;Définition de périodes de travailles par Catégories / Projets;taches à completer;;;null;[Constant Suchet];null;
+86c2qwge8;Ajout de l'exportation CSV et JSON;taches à completer;;;null;[Constant Suchet];3;30 m
+86c2qfutk;Ajouter une section de présentation;taches à completer;;;86c2qfua9;[Constant Suchet];3;25 m
+86c2qfugw;Vérifier l’installation avec un test simple;taches à completer;;;86c2qfuaa;[Constant Suchet];3;15 m
+86c2qfutq;Intégrer les styles et animations;taches à completer;;;86c2qfua9;[Constant Suchet];2;1 h
+86c2qfwge;Implémenter la connexion/login sur desktop;taches en planning;3/29/2025, 4:00:00 AM GMT+1;;null;[Constant Suchet];2;3 h
+86c2qwpec;Création d'un objectif de temps (application ou type d'application);taches à completer;;;null;[Constant Suchet];null;
+86c2qk38c;Améliorer la sécurité du site et le login;taches en planning;3/31/2025, 4:00:00 AM GMT+2;;null;[Constant Suchet];2;
+86c2qraxt;Créer un top 3 des applications les plus utilisées;taches à completer;;;86c2qqxkd;[];null;20 m
+86c2qx8bm;Compatibilité avec les montres de sommeil pour démontrer l'impact des écrans sur le temps de sommeil;taches à completer;;;null;[Constant Suchet];null;
+86c2qq2x4;save data to a different file;taches à completer;3/31/2025, 4:00:00 AM GMT+2;3/31/2025, 12:00:00 AM GMT+2;86c2qpzzp;[Timothe SANDT];null;
+86c2r2eau;working time version;taches à completer;5/6/2025, 12:00:00 AM GMT+2;5/6/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qxwya;send new project in DB;taches à completer;4/24/2025, 4:00:00 AM GMT+2;4/24/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2r2dq5;Projects version;taches à completer;4/28/2025, 12:00:00 AM GMT+2;4/28/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qrk45;check if app is authorize;taches à completer;5/5/2025, 4:00:00 AM GMT+2;5/4/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qy1d1;add keyboard Shortcut;taches à completer;4/20/2025, 4:00:00 AM GMT+2;4/16/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qxurm;Get data from DB;taches à completer;4/19/2025, 4:00:00 AM GMT+2;4/18/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qrd7b;définir période de travail;taches à completer;5/2/2025, 4:00:00 AM GMT+2;5/1/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qtcvx;close app;taches à completer;5/15/2025, 4:00:00 AM GMT+2;5/14/2025, 12:00:00 AM GMT+2;86c2qt8a6;[Timothe SANDT];null;
+86c2r2dvt;small feature;taches à completer;4/22/2025, 12:00:00 AM GMT+2;4/22/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qk5xf;Tray icon;taches fermé(e)s;2/24/2025, 4:00:00 AM GMT+1;2/15/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qq1h1;Send data;taches à completer;3/30/2025, 7:00:00 AM GMT+2;3/27/2025, 12:00:00 AM GMT+1;86c2qpzzp;[Timothe SANDT];null;
+86c2qqjka;Update DB;taches à completer;4/17/2025, 4:00:00 AM GMT+2;4/13/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qtcq4;hide app with a message;taches à completer;5/13/2025, 4:00:00 AM GMT+2;5/7/2025, 12:00:00 AM GMT+2;86c2qt8a6;[Timothe SANDT];null;
+86c2qtc8f;get pos and size;taches à completer;5/6/2025, 4:00:00 AM GMT+2;5/6/2025, 12:00:00 AM GMT+2;86c2qt8a6;[Timothe SANDT];null;
+86c2qpzzp;Connection to DB;taches à completer;3/31/2025, 4:00:00 AM GMT+2;3/20/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT,Constant Suchet];null;
+86c2qmam7;Launch on task ;taches à completer;4/9/2025, 6:00:00 AM GMT+2;4/2/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qfjvt;Start as admin;taches terminé(e)s;2/28/2025, 4:00:00 AM GMT+1;2/27/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qku44;test if an app prevent from sleeping;taches terminé(e)s;2/18/2025, 4:00:00 AM GMT+1;2/17/2025, 12:00:00 AM GMT+1;86c2qjzyc;[];null;
+86c2qqm70;Create project in Tray menu;taches à completer;4/23/2025, 4:00:00 AM GMT+2;4/23/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qkdw2;Auto save;taches fermé(e)s;2/22/2025, 4:00:00 AM GMT+1;2/22/2025, 4:00:00 AM GMT+1;86c2qk9y0;[Timothe SANDT];null;
+86c2qk9y0;Logger;taches fermé(e)s;2/22/2025, 4:00:00 AM GMT+1;2/18/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qqhfr;Choose project in tray menu;taches à completer;4/22/2025, 4:00:00 AM GMT+2;4/20/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qrf3r;ajouter un temps de travail - pomodoro;taches à completer;5/3/2025, 4:00:00 AM GMT+2;5/3/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qf51q;App tracker;taches fermé(e)s;2/15/2025, 4:00:00 AM GMT+1;2/13/2025, 12:00:00 AM GMT+1;86c2qjzyc;[Timothe SANDT];null;
+86c2qf9pt;Create Tray icon;taches fermé(e)s;2/15/2025, 4:00:00 AM GMT+1;2/15/2025, 12:00:00 AM GMT+1;86c2qk5xf;[Timothe SANDT];null;
+86c2qjzyc;Tracker;taches fermé(e)s;2/28/2025, 4:00:00 AM GMT+1;2/13/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qmc5m;app manifest;taches à completer;4/1/2025, 5:00:00 AM GMT+2;3/29/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];4;
+86c2qta3a;modification des groupes;taches à completer;5/2/2025, 4:00:00 AM GMT+2;4/30/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qfzxa;Lier afk monitor and logger;taches fermé(e)s;2/23/2025, 4:00:00 AM GMT+1;2/23/2025, 4:00:00 AM GMT+1;86c2qjzyc;[Timothe SANDT];null;
+86c2qt8a6;Block an app;taches à completer;5/15/2025, 4:00:00 AM GMT+2;5/6/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qmjry;Synchronize version;taches à completer;4/12/2025, 12:00:00 AM GMT+2;4/12/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];2;
+86c2qfj3x;get computer info;taches fermé(e)s;2/25/2025, 4:00:00 AM GMT+1;2/25/2025, 4:00:00 AM GMT+1;86c2qjzyc;[Timothe SANDT];null;
+86c2qqfjt;Caffeine timer;taches à completer;4/14/2025, 4:00:00 AM GMT+2;4/13/2025, 12:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2r2ebz;Anti distraction version;taches à completer;5/18/2025, 4:00:00 AM GMT+2;5/18/2025, 4:00:00 AM GMT+2;null;[Timothe SANDT];null;
+86c2qfu0p;First working version of the app;taches fermé(e)s;3/3/2025, 4:00:00 AM GMT+1;3/3/2025, 4:00:00 AM GMT+1;null;[Timothe SANDT];2;
+86c2qfpw3;Caffeine;taches terminé(e)s;2/26/2025, 4:00:00 AM GMT+1;2/25/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];4;
+86c2qfd3x;Init project;taches fermé(e)s;2/12/2025, 4:00:00 AM GMT+1;2/12/2025, 4:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qfqea;Main app and thread;taches fermé(e)s;2/14/2025, 4:00:00 AM GMT+1;2/13/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qq08u;connect account;taches à completer;3/26/2025, 4:00:00 AM GMT+1;3/20/2025, 12:00:00 AM GMT+1;86c2qpzzp;[Constant Suchet];null;
+86c2r2d71;temporally authorize it;taches à completer;5/15/2025, 4:00:00 AM GMT+2;5/14/2025, 12:00:00 AM GMT+2;86c2qt8a6;[Timothe SANDT];null;
+86c2qkkxf;AFK monitoring;taches fermé(e)s;2/28/2025, 4:00:00 AM GMT+1;2/17/2025, 12:00:00 AM GMT+1;86c2qjzyc;[Timothe SANDT];null;
+86c2qfmpw;AFK monitoring if admin disable;taches fermé(e)s;2/28/2025, 4:00:00 AM GMT+1;2/28/2025, 12:00:00 AM GMT+1;86c2qjzyc;[Timothe SANDT];null;
+86c2qfe3n;Create logger;taches fermé(e)s;2/21/2025, 4:00:00 AM GMT+1;2/18/2025, 12:00:00 AM GMT+1;86c2qk9y0;[Timothe SANDT];null;
+86c2qff2v;Auto Start;taches terminé(e)s;2/24/2025, 4:00:00 AM GMT+1;2/22/2025, 12:00:00 AM GMT+1;null;[Timothe SANDT];null;
+86c2qft8d;Tray icon menu;taches fermé(e)s;2/24/2025, 4:00:00 AM GMT+1;2/23/2025, 4:00:00 AM GMT+1;86c2qk5xf;[Timothe SANDT];null;
+86c2qy0kj;Developpez des widgets sur le temps passé;taches à completer;;;null;[];null;
